@@ -1,1 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  background: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  padding: 24px;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #333;
+}
+
+h1 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.datetime .date {
+  font-size: 12px;
+  color: #888;
+  text-align: right;
+}
+
+.datetime .time {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.power-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.power-label {
+  font-size: 10px;
+  color: #888;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.toggle {
+  position: relative;
+  width: 48px;
+  height: 26px;
+  cursor: pointer;
+  display: block;
+}
+
+.toggle input {
+  display: none;
+}
+
+.toggle-track {
+  position: absolute;
+  inset: 0;
+  background: #444;
+  border-radius: 0;
+  transition: background 0.2s;
+}
+
+.toggle input:checked ~ .toggle-track {
+  background: #fff;
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 18px;
+  height: 18px;
+  background: #111;
+  border-radius: 0;
+  transition: transform 0.2s;
+}
+
+.toggle input:checked ~ .toggle-thumb {
+  transform: translateX(22px);
+}
+
+.power-status {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #fff;
+}
+
+.bme-status-bar {
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 20px;
+  letter-spacing: 0.05em;
+}
+
+.bme-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: #555;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.bme-dot.detected {
+  background: #fff;
+}
+
+.error-bar {
+  display: none;
+  font-size: 11px;
+  color: #f87171;
+  margin-bottom: 16px;
+  letter-spacing: 0.05em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  padding: 20px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-label {
+  font-size: 10px;
+  color: #888;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.card-value {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.card-unit {
+  font-size: 12px;
+  color: #888;
+}
+
+.chart-wrap {
+  flex: 1;
+  min-height: 0;
+  margin-top: 12px;
+}
+
+.last-update {
+  font-size: 10px;
+  color: #555;
+  margin-top: 16px;
+  letter-spacing: 0.05em;
+}
