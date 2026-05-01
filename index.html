@@ -206,56 +206,5 @@
 
 <script src="app.js"></script>
 
-<!--
-ARDUINO SKETCH — paste into Arduino IDE
-========================================
-
-#include <WiFiS3.h>
-
-const char* SSID     = "YOUR_WIFI_SSID";
-const char* PASSWORD = "YOUR_WIFI_PASSWORD";
-
-WiFiServer server(80);
-
-void setup() {
-  Serial.begin(115200);
-  WiFi.begin(SSID, PASSWORD);
-  while (WiFi.status() != WL_CONNECTED) { delay(500); }
-  Serial.println(WiFi.localIP());
-  server.begin();
-}
-
-void loop() {
-  WiFiClient client = server.available();
-  if (!client) return;
-  String req = client.readStringUntil('\r');
-  client.flush();
-
-  if (req.indexOf("GET /data") >= 0) {
-    float temperature = 22.5;
-    float humidity    = 55.0;
-    float light       = 420.0;
-    float pressure    = 1013.25;
-    float ozone       = 12.4;
-    float height      = 35.0;
-
-    String json = "{";
-    json += "\"temperature\":"  + String(temperature, 2) + ",";
-    json += "\"humidity\":"     + String(humidity,    2) + ",";
-    json += "\"light\":"        + String(light,       2) + ",";
-    json += "\"pressure\":"     + String(pressure,    2) + ",";
-    json += "\"ozone\":"        + String(ozone,       2) + ",";
-    json += "\"height\":"       + String(height,      2) + "}";
-
-    client.println("HTTP/1.1 200 OK");
-    client.println("Content-Type: application/json");
-    client.println("Access-Control-Allow-Origin: *");
-    client.println("Connection: close");
-    client.println();
-    client.println(json);
-  }
-  client.stop();
-}
--->
 </body>
 </html>
