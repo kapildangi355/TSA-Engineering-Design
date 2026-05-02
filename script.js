@@ -1,4 +1,4 @@
-const ARDUINO_IP = 'http://10.182.164.160';
+const ARDUINO_IP = 'http://10.138.221.160';
 const MAX_POINTS = 30;
 let isPowered = true;
 let firstLoad = true;
